@@ -30,5 +30,5 @@ Gem::Specification.new do |s|
     end
   end
 
-  s.add_dependency "decidim-core", Decidim::InternalEvaluation.version
+  s.add_dependency "decidim-core", Decidim::InternalEvaluation.decidim_version
 end
