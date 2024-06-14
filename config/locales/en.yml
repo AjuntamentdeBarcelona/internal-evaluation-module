@@ -1,0 +1,6 @@
+---
+en:
+  decidim:
+    components:
+      internal_evaluation:
+        name: InternalEvaluation
