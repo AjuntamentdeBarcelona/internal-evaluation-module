@@ -18,6 +18,13 @@ module Decidim
       initializer "InternalEvaluation.webpacker.assets_path" do
         Decidim.register_assets_path File.expand_path("app/packs", root)
       end
+
+      initializer "decidim_internal_evaluation.proposals_search_additions" do
+        config.to_prepare do
+          Decidim::Proposals::Proposal.include(Decidim::InternalEvaluation::InternalEvaluationAdditions)
+          Decidim::Proposals::Proposal.prepend(Decidim::InternalEvaluation::InternalEvaluationOverrides)
+        end
+      end
     end
   end
 end
