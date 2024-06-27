@@ -1,6 +1,14 @@
 ---
 en:
   decidim:
+    admin:
+      filters:
+        proposals:
+          evaluated_by_me:
+            label: My evaluation state
+            values:
+              'false': Evaluation pending
+              'true': Evaluated
     components:
       internal_evaluation:
         name: InternalEvaluation

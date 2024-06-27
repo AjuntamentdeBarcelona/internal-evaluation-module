@@ -19,6 +19,17 @@ module Decidim
         # root to: "internal_evaluation#index"
       end
 
+      initializer "decidim_internal_evaluation.filters" do
+        Decidim.admin_filter(:proposals) do |filter|
+          if Decidim::Proposals::ValuationAssignment.joins(proposal: :component).where(proposal: { component: current_component }).exists?(
+            valuator_role: current_participatory_space.user_roles("valuator").where(user: current_user)
+          )
+            filter.add_filters(:evaluated_by_me)
+            filter.add_filters_with_values(evaluated_by_me: %w(true false))
+          end
+        end
+      end
+
       def load_seed
         nil
       end
