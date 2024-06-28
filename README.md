@@ -19,6 +19,8 @@ And then execute:
 
 ```bash
 bundle
+bundle exec rails decidim_internal_evaluation:install:migrations
+bundle exec rails db:migrate
 ```
 
 ## Contributing
