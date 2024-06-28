@@ -4,10 +4,10 @@ en:
     admin:
       filters:
         proposals:
-          evaluated_by_me:
-            label: My evaluation state
+          evaluated_by_user:
+            label: Evaluation
             values:
-              'false': Evaluation pending
+              'false': Not evaluated
               'true': Evaluated
     components:
       internal_evaluation:

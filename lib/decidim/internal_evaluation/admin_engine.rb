@@ -24,8 +24,8 @@ module Decidim
           if Decidim::Proposals::ValuationAssignment.joins(proposal: :component).where(proposal: { component: current_component }).exists?(
             valuator_role: current_participatory_space.user_roles("valuator").where(user: current_user)
           )
-            filter.add_filters(:evaluated_by_me)
-            filter.add_filters_with_values(evaluated_by_me: %w(true false))
+            filter.add_filters(:evaluated_by_user)
+            filter.add_filters_with_values(evaluated_by_user: %w(true false))
           end
         end
       end
